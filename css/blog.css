@@ -1,0 +1,179 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    color:#222;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#fff;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+    z-index:999;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#2563eb;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links a{
+    color:#222;
+    font-weight:500;
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    width:220px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+}
+
+.dropdown-menu a{
+    display:block;
+    padding:14px 20px;
+}
+
+.dropdown-menu a:hover{
+    background:#f5f5f5;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:991px){
+
+.menu-btn{
+    display:block;
+}
+
+.nav-links{
+    position:absolute;
+    top:80px;
+    left:-100%;
+    width:100%;
+    background:#fff;
+    flex-direction:column;
+    padding:20px;
+    transition:.4s;
+}
+
+.nav-links.active{
+    left:0;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+}
+
+/* NAV ACTIONS */
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.login-btn{
+    padding:10px 22px;
+    border:2px solid #2563eb;
+    border-radius:30px;
+    color:#2563eb;
+    font-weight:600;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#2563eb;
+    color:#fff;
+}
+
+.signup-btn{
+    padding:10px 22px;
+    background:#2563eb;
+    border-radius:30px;
+    color:#fff;
+    font-weight:600;
+    transition:.3s;
+}
+
+.signup-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(37,99,235,.3);
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:991px){
+
+    .login-btn,
+    .signup-btn{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+}
