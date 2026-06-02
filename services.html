@@ -11,63 +11,57 @@
 
 <header>
 
-<nav class="navbar">
 
-<div class="logo">
-MarketPro
-</div>
+ <nav class="navbar">
 
-<ul class="nav-links">
+        <div class="logo">
+            <a href="index.html">
+               <img src="images/logo-stackly (1).webp" alt="Logo">
+            </a>
+        </div>
 
-<li><a href="index.html">Home</a></li>
+        <ul class="nav-links">
 
-<li><a href="about.html">About</a></li>
+            <li><a href="index.html">Home</a></li>
 
-<li class="dropdown">
+            <li><a href="about.html">About</a></li>
 
-<a href="#">
-Services ▼
-</a>
+            <li class="dropdown">
+                <a href="#">Services ▾</a>
 
-<ul class="dropdown-menu">
-<li><a href="services.html">Our Services</a></li>
-<li><a href="service-details.html">Service Details</a></li>
-</ul>
+                <ul class="dropdown-menu">
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="service-details.html">Service Details</a></li>
+                </ul>
+            </li>
 
-</li>
+            <li class="dropdown">
+                <a href="#">Pages ▾</a>
 
-<li class="dropdown">
+                <ul class="dropdown-menu">
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </li>
 
-<a href="#">
-Pages ▼
-</a>
+            <li><a href="contact.html">Contact</a></li>
 
-<ul class="dropdown-menu">
-<li><a href="team.html">Our Team</a></li>
-<li><a href="case-studies.html">Case Studies</a></li>
-<li><a href="pricing.html">Pricing</a></li>
-</ul>
+        </ul>
 
-</li>
+        <div class="nav-actions">
 
-<li><a href="contact.html">Contact</a></li>
+            <a class="login-btn" id="authBtn">
+                Login
+            </a>
 
-</ul>
+            <div class="menu-btn">
+                ☰
+            </div>
 
-<div class="nav-actions">
+        </div>
 
-    <a href="login.html" class="login-btn">
-        Login
-    </a>
-
-    <div class="menu-btn">
-        ☰
-    </div>
-
-</div>
-
-</nav>
-
+    </nav>
 </header>
 
 <!-- SERVICES -->
@@ -332,7 +326,11 @@ Pages ▼
         <!-- COLUMN 1 -->
         <div class="dm-footer-col">
 
-            <h2 class="dm-logo">MarketPro</h2>
+            <div class="ftr-logo">
+               <a href="index.html">
+                  <img src="images/logo-stackly (1).webp" alt="Logo">
+               </a>
+            </div>
 
             <p>
                 We help businesses grow through SEO, PPC, Social Media Marketing,
@@ -406,6 +404,9 @@ Pages ▼
 
 </footer>
 
+<div id="auth-placeholder"></div>
+
+<script src="js/auth.js"></script>
 
 <script src="js/services.js"></script>
 

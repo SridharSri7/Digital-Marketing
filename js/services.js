@@ -1,6 +1,5 @@
 // This code is identical to the code in js/blog.js, js/about.js, and js/home.js. It 
 // adds an event listener to the menu button that toggles the "active" class on the navigation links when the button is clicked.
-
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
@@ -9,6 +8,18 @@ if(menuBtn){
         navLinks.classList.toggle("active");
     });
 }
+
+// ======= NAVBAR
+document.querySelectorAll(".dropdown > a").forEach(item => {
+    item.addEventListener("click", function(e){
+        if(window.innerWidth <= 991){
+            e.preventDefault();
+            this.parentElement.classList.toggle("active");
+        }
+    });
+});
+
+
 
 // ============================== SERVICE DETAILS PAGE ==============================
 const srvSection = document.querySelector(".srv-section");
