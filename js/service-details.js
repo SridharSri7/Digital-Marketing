@@ -9,3 +9,15 @@ if(menuBtn && navLinks){
     });
 }
 
+const items = document.querySelectorAll(".faq-item");
+
+items.forEach(item => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+
+    items.forEach(i => {
+      if (i !== item) i.classList.remove("active");
+    });
+
+    item.classList.toggle("active");
+  });
+});

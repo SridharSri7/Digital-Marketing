@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/auth.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+<!-- AUTH MODAL -->
+
+<div class="auth-modal" id="authModal">
+
+    <div class="auth-container">
+
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+
+        <!-- LOGIN -->
+
+        <div id="loginForm">
+
+            <h2>Login</h2>
+
+            <input type="email" id="loginEmail" placeholder="Email">
+
+            <input type="password" id="loginPassword" placeholder="Password">
+            <small>
+               Password must be 8+ chars with letters, numbers & symbols
+            </small>
+
+            <select id="loginRole">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <button onclick="loginUser()">
+                Login
+            </button>
+
+            <p>
+                No account?
+                <span onclick="showSignup()">
+                    Sign Up
+                </span>
+            </p>
+
+        </div>
+
+        <!-- SIGNUP -->
+
+        <div id="signupForm" style="display:none;">
+
+            <h2>Create Account</h2>
+
+            <input type="text" id="signupName" placeholder="Name">
+
+            <input type="email" id="signupEmail" placeholder="Email">
+
+            <input type="password" id="signupPassword" placeholder="Password">
+            <small>
+               Password must be 8+ chars with letters, numbers & symbols
+            </small>
+
+            <select id="signupRole">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <button onclick="signupUser()">
+                Create Account
+            </button>
+
+            <p>
+                Already have account?
+                <span onclick="showLogin()">
+                    Login
+                </span>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

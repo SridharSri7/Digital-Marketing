@@ -7,6 +7,22 @@ if(menuBtn){
     });
 }
 
+// ======= NAVBAR
+document.querySelectorAll(".dropdown > a").forEach(item => {
+    item.addEventListener("click", function(e){
+        if(window.innerWidth <= 991){
+            e.preventDefault();
+            this.parentElement.classList.toggle("active");
+        }
+    });
+});
+
+
+
+
+
+
+
 /* Counter Animation */
 
 const counters = document.querySelectorAll(".counter");

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+   <script>
+
+    const user =
+    JSON.parse(localStorage.getItem("loggedUser"));
+
+    if(
+        !user ||
+        user.role !== "admin"
+    ){
+        window.location.href="index.html";
+    }
+
+</script>
+<body>
+    
+    
+    <h1>Admin Dashboard</h1>
+    
+    <h3>Manage Users</h3>
+    
+    <h3>Manage Projects</h3>
+    
+    <h3>Manage Services</h3>
+    
+    <h3>Website Analytics</h3>
+    
+    <button onclick="logout()">
+    Logout
+    </button>
+    
+    <script>
+    
+    function logout(){
+    
+    localStorage.removeItem("loggedUser");
+    
+    window.location.href="index.html";
+    
+    }
+    
+    </script>
+
+</body>
+</html>

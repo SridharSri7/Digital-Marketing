@@ -746,6 +746,27 @@ header{
     transform:translateY(0);
 }
 
+.ppc-3d-inner{
+    width: 100%;
+}
+
+.ppc-3d-inner img{
+    width:100%;
+    border-radius:20px;
+    transition:0.5s;
+    transform-style:preserve-3d; /* IMPORTANT for 3D depth */
+    margin-bottom: 15px;
+}
+
+.ppc-3d-content{
+   
+    
+    color:#fff;
+    line-height: 25px;
+    
+    
+}
+
 /* ================= BACKGROUND GRID DEPTH ================= */
 
 .ppc-section{

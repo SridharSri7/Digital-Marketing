@@ -6,6 +6,7 @@
 <title>MarketPro</title>
 
 <link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/auth.css">
 </head>
 <body>
 
@@ -14,7 +15,7 @@
 <nav class="navbar">
 
 <div class="logo">
-MarketPro
+    <img src="images/logo.png" alt="MarketPro Logo">
 </div>
 
 <ul class="nav-links">
@@ -50,7 +51,6 @@ Pages ▼
 
 </li>
 
-<li><a href="blog.html">Blog</a></li>
 
 <li><a href="contact.html">Contact</a></li>
 
@@ -58,12 +58,8 @@ Pages ▼
 
 <div class="nav-actions">
 
-    <a href="login.html" class="login-btn">
+    <a class="login-btn" id="authBtn">
         Login
-    </a>
-
-    <a href="signup.html" class="signup-btn">
-        Sign Up
     </a>
 
     <div class="menu-btn">
@@ -76,23 +72,30 @@ Pages ▼
 
 </header>
 
+<!-- HERO SECTION -->
 <section class="hero">
 
-<div class="hero-content">
+  <div class="hero-content">
 
-<h1>
-Grow Your Business Online
-</h1>
+    <div class="hero-kicker">Digital Growth Studio</div>
 
-<p>
-We help businesses generate leads, increase sales and build powerful online brands.
-</p>
+    <h1>Grow Your Business Online</h1>
 
-<a href="contact.html" class="btn">
-Get Started
-</a>
+    <p>
+      We help businesses generate leads, increase sales and build powerful online brands.
+    </p>
 
-</div>
+    <div class="hero-story">
+      Every brand has a story — we make sure yours is seen, felt, and remembered.
+    </div>
+
+    <a href="contact.html" class="btn">Get Started</a>
+
+  </div>
+
+  <div class="hero-img">
+    <img src="/images/Creative-design.webp" alt="">
+  </div>
 
 </section>
 
@@ -123,27 +126,27 @@ Get Started
         <div class="orbit">
 
             <div class="logo-item">
-                <img src="images/google.png">
+                <img src="images/brand11.webp">
             </div>
 
             <div class="logo-item">
-                <img src="images/meta.png">
+                <img src="images/brand10.webp">
             </div>
 
             <div class="logo-item">
-                <img src="images/amazon.png">
+                <img src="images/brand3.webp">
             </div>
 
             <div class="logo-item">
-                <img src="images/netflix.png">
+                <img src="images/brand5.jpg">
             </div>
 
             <div class="logo-item">
-                <img src="images/microsoft.png">
+                <img src="images/brand1.webp">
             </div>
 
             <div class="logo-item">
-                <img src="images/shopify.png">
+                <img src="images/brand8.webp">
             </div>
 
         </div>
@@ -561,6 +564,11 @@ Get Started
     </div>
 
 </footer>
+
+<div id="auth-placeholder"></div>
+
+<script src="js/auth.js"></script>
+
 
 <script src="js/home.js"></script>
 
