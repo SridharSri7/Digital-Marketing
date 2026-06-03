@@ -7,7 +7,7 @@
 }
 
 body{
-    color:#222;
+    color:white;
     overflow-x:hidden;
 }
 
@@ -56,7 +56,7 @@ header{
 }
 
 .nav-links a{
-    color:#222;
+    color:white;
     font-weight:500;
 }
 

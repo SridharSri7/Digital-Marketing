@@ -1,38 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Dashboard</title>
+<link rel="stylesheet" href="css/user-dashboard.css">
 </head>
 <body>
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="profile-box">
+            <div class="avatar" id="avatar">U</div>
+
+            <h3 id="name">User</h3>
+            <p id="email">user@gmail.com</p>
+            <span id="role">User</span>
+        </div>
+
+        <nav class="menu">
+
+    <a href="#" class="active" data-target="dashboard">
+        🏠 Dashboard
+    </a>
+
+    <a href="#" data-target="profile">
+        👤 Profile
+    </a>
+
+    <a href="#" data-target="analytics">
+        📊 Analytics
+    </a>
+
+    <a href="#" data-target="orders">
+        🛒 Orders
+    </a>
+
+    <a href="#" data-target="settings">
+        ⚙ Settings
+    </a>
+
+</nav>
+
+        <button class="logout" onclick="logout()">Logout</button>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <header class="topbar">
+
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+            <h2>Dashboard</h2>
+
+             <a href="index.html" class="home-btn">
+              🏠 Home
+             </a>
+
+        </header>
+
+        <section class="content">
+
+    <!-- DASHBOARD -->
     
-    <h1>User Dashboard</h1>
 
-    <h3>My Profile</h3>
 
-    <h3>My Services</h3>
+        
 
-    <h3>My Orders</h3>
+        <!-- ================= -->
+         <div class="page-section active-section" id="dashboard">
 
-    <h3>Support Tickets</h3>
+        <div class="grid">
+            <div class="box">Total Orders</div>
+            <div class="box">Revenue</div>
+            <div class="box">Analytics</div>
+            <div class="box">Support</div>
+        </div>
 
-    <button onclick="logout()">
-    Logout
-    </button>
+    <div class="welcome-card">
+        <h1>Welcome Back 👋</h1>
+        <p>
+            Monitor campaigns, track performance,
+            manage clients and grow your business.
+        </p>
+    </div>
 
-    <script>
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h3>156</h3>
+            <p>Total Clients</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>48</h3>
+            <p>Active Projects</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>₹1.2L</h3>
+            <p>Monthly Revenue</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>92%</h3>
+            <p>Success Rate</p>
+        </div>
+
+    </div>
+
+    <div class="dashboard-row">
+
+        <div class="dashboard-card">
+
+            <h2>Recent Activity</h2>
+
+            <ul class="activity-list">
+                <li>✅ New client registered</li>
+                <li>📈 SEO campaign increased traffic by 28%</li>
+                <li>💰 Payment received from ABC Company</li>
+                <li>🎯 Facebook Ads campaign launched</li>
+            </ul>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h2>Upcoming Tasks</h2>
+
+            <ul class="activity-list">
+                <li>📅 Client Meeting - 10:00 AM</li>
+                <li>📝 Submit Monthly Report</li>
+                <li>🚀 Launch Google Ads Campaign</li>
+                <li>📊 Review Analytics</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- PROFILE -->
+<div class="page-section" id="profile">
+
+    <div class="profile-header">
+
+        <div class="profile-avatar">
+            <span id="profileAvatar">U</span>
+        </div>
+
+        <div class="profile-info">
+
+            <h2 id="profileName">User Name</h2>
+
+            <p id="profileEmail">
+                user@gmail.com
+            </p>
+
+            <span class="profile-role" id="profileRole">
+                User
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="profile-grid">
+
+        <div class="profile-card">
+
+            <h3>Personal Information</h3>
+
+            <div class="info-row">
+                <span>Full Name</span>
+                <strong id="fullName">User Name</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Email</span>
+                <strong id="emailAddress">user@gmail.com</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Role</span>
+                <strong id="userRole">User</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Status</span>
+                <strong class="active-status">Active</strong>
+            </div>
+
+        </div>
+
+        <div class="profile-card">
+
+            <h3>Account Statistics</h3>
+
+            <div class="stat-item">
+                <h2>48</h2>
+                <p>Projects</p>
+            </div>
+
+            <div class="stat-item">
+                <h2>156</h2>
+                <p>Tasks Completed</p>
+            </div>
+
+            <div class="stat-item">
+                <h2>12</h2>
+                <p>Campaigns</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ANALYTICS -->
+<div class="page-section" id="analytics">
+
+    <div class="section-header">
+        <h1>Analytics Overview</h1>
+        <p>Track your business performance and growth metrics.</p>
+    </div>
+
+    <div class="analytics-grid">
+
+        <div class="analytics-card">
+            <h4>Total Visitors</h4>
+            <h2>24,568</h2>
+            <span class="positive">+18.4%</span>
+        </div>
+
+        <div class="analytics-card">
+            <h4>Conversions</h4>
+            <h2>1,284</h2>
+            <span class="positive">+12.7%</span>
+        </div>
+
+        <div class="analytics-card">
+            <h4>Bounce Rate</h4>
+            <h2>23%</h2>
+            <span class="negative">-4.2%</span>
+        </div>
+
+        <div class="analytics-card">
+            <h4>Revenue</h4>
+            <h2>₹1.8L</h2>
+            <span class="positive">+31.5%</span>
+        </div>
+
+    </div>
+
+    <div class="analytics-row">
+
+        <div class="analytics-panel">
+            <h3>Traffic Sources</h3>
+
+            <div class="source-item">
+                <span>Organic Search</span>
+                <strong>45%</strong>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" style="width:45%"></div>
+            </div>
+
+            <div class="source-item">
+                <span>Social Media</span>
+                <strong>28%</strong>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" style="width:28%"></div>
+            </div>
+
+        </div>
+
+        <div class="analytics-panel">
+
+            <h3>Top Performing Campaigns</h3>
+
+            <ul class="campaign-list">
+
+                <li>
+                    <span>Google Ads</span>
+                    <strong>₹52,000</strong>
+                </li>
+
+                <li>
+                    <span>Facebook Ads</span>
+                    <strong>₹38,000</strong>
+                </li>
+
+                <li>
+                    <span>SEO Campaign</span>
+                    <strong>₹31,500</strong>
+                </li>
+
+                <li>
+                    <span>Email Marketing</span>
+                    <strong>₹24,800</strong>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ORDERS -->
+<div class="page-section" id="orders">
+
+    <div class="section-header">
+        <h1>Orders Management</h1>
+        <p>Manage and track all customer orders.</p>
+    </div>
+
+    <div class="orders-table">
+
+        <div class="order-row header">
+            <span>Order ID</span>
+            <span>Client</span>
+            <span>Service</span>
+            <span>Amount</span>
+            <span>Status</span>
+            <span>Action</span>
+        </div>
+
+        <div class="order-row">
+            <span>#ORD001</span>
+            <span>ABC Company</span>
+            <span>SEO Package</span>
+            <span>₹15,000</span>
+            <span class="status completed">Completed</span>
+            <button class="view-btn" onclick="window.location.href='dashboardError.html'">View</button>
+        </div>
+
+        <div class="order-row">
+            <span>#ORD002</span>
+            <span>XYZ Traders</span>
+            <span>Google Ads</span>
+            <span>₹22,000</span>
+            <span class="status processing">Processing</span>
+            <button class="view-btn" onclick="window.location.href='dashboardError.html'">View</button>
+        </div>
+
+        <div class="order-row">
+            <span>#ORD003</span>
+            <span>Tech Solutions</span>
+            <span>Social Media</span>
+            <span>₹12,500</span>
+            <span class="status pending">Pending</span>
+            <button class="view-btn" onclick="window.location.href='dashboardError.html'">View</button>
+        </div>
+
+        <div class="order-row">
+            <span>#ORD004</span>
+            <span>Growth Media</span>
+            <span>Website Design</span>
+            <span>₹35,000</span>
+            <span class="status completed">Completed</span>
+            <button class="view-btn" onclick="window.location.href='dashboardError.html'">View</button>
+        </div>
+
+    </div>
+
+</div>
+
     
-    function logout(){
-    
-    localStorage.removeItem("loggedUser");
-    
-    window.location.href="index.html";
-    
-    }
-    
-    </script>
+
+    <!-- SETTINGS -->
+    <div class="page-section" id="settings">
+        <div class="card">
+            <h2>Settings</h2>
+            <p>Customize your account settings.</p>
+        </div>
+
+<!-- main settings section -->
+<section class="settings-section">
+
+  <div class="settings-header">
+    <h1>Settings</h1>
+    <p>Manage your account & preferences</p>
+  </div>
+
+  <div class="settings-grid">
+
+    <!-- PROFILE -->
+    <div class="settings-card">
+      <h3>Profile</h3>
+
+      <div class="form-grid">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="text" placeholder="Username">
+        <input type="text" placeholder="Phone Number">
+      </div>
+
+      <button onclick="window.location.href='dashboardError.html'">Save Profile</button>
+    </div>
+
+    <!-- SECURITY -->
+    <div class="settings-card">
+      <h3>Security</h3>
+
+      <div class="form-grid">
+        <input type="password" placeholder="Current Password">
+        <input type="password" placeholder="New Password">
+        <input type="password" placeholder="Confirm Password">
+      </div>
+
+      <button onclick="window.location.href='dashboardError.html'">Update Password</button>
+    </div>
+
+    <!-- NOTIFICATIONS -->
+    <div class="settings-card">
+      <h3>Notifications</h3>
+
+      <label><input type="checkbox"> Email Notifications</label>
+      <label><input type="checkbox"> SMS Alerts</label>
+      <label><input type="checkbox"> Push Notifications</label>
+
+    </div>
+
+    <!-- APPEARANCE -->
+    <div class="settings-card">
+      <h3>Appearance</h3>
+
+      <div class="toggle-row">
+        <span>Dark Mode</span>
+        <input type="checkbox">
+      </div>
+
+      <div class="toggle-row">
+        <span>Compact Mode</span>
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <!-- API -->
+    <div class="settings-card">
+      <h3>API Settings</h3>
+
+      <input type="text" placeholder="Your API Key">
+
+      <button onclick="window.location.href='dashboardError.html'">Regenerate Key</button>
+    </div>
+
+    <!-- DANGER -->
+    <div class="settings-card danger">
+      <h3>Danger Zone</h3>
+      <p>Deleting your account is permanent.</p>
+
+      <button class="delete-btn" onclick="window.location.href='dashboardError.html'">Delete Account</button>
+    </div>
+
+  </div>
+
+</section>
 
 
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
 </body>
 </html>

@@ -1,52 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="/css/admin-dashboard.css">
 </head>
-
-   <script>
-
-    const user =
-    JSON.parse(localStorage.getItem("loggedUser"));
-
-    if(
-        !user ||
-        user.role !== "admin"
-    ){
-        window.location.href="index.html";
-    }
-
-</script>
 <body>
-    
-    
-    <h1>Admin Dashboard</h1>
-    
-    <h3>Manage Users</h3>
-    
-    <h3>Manage Projects</h3>
-    
-    <h3>Manage Services</h3>
-    
-    <h3>Website Analytics</h3>
-    
-    <button onclick="logout()">
-    Logout
-    </button>
-    
-    <script>
-    
-    function logout(){
-    
-    localStorage.removeItem("loggedUser");
-    
-    window.location.href="index.html";
-    
-    }
-    
-    </script>
 
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="profile-box">
+            <div class="avatar" id="avatar">A</div>
+
+            <h3 id="name">Admin</h3>
+            <p id="email">admin@gmail.com</p>
+            <span class="role-badge" id="role">Admin</span>
+        </div>
+
+        <nav class="menu">
+
+    <a href="#" class="menu-link active" data-page="dashboard">📊 Dashboard</a>
+
+    <a href="#" class="menu-link" data-page="users">👥 Users</a>
+
+    <a href="#" class="menu-link" data-page="orders">🛒 Orders</a>
+
+    <a href="#" class="menu-link" data-page="analytics">📈 Analytics</a>
+
+    <a href="#" class="menu-link" data-page="settings">⚙️ Settings</a>
+
+</nav>
+
+        <button class="logout" onclick="logout()">Logout</button>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <header class="topbar">
+
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+            <h2>Admin Panel</h2>
+
+            <a href="index.html" class="home-btn">
+              🏠 Home
+             </a>
+
+        </header>
+
+        <section class="content">
+
+    <!-- Dashboard -->
+        <!-- ================= -->
+         <div class="page-section active-section" id="dashboard">
+
+        <div class="grid">
+            <div class="box">Total Orders</div>
+            <div class="box">Revenue</div>
+            <div class="box">Analytics</div>
+            <div class="box">Support</div>
+        </div>
+
+    <div class="welcome-card">
+        <h1>Welcome Back 👋</h1>
+        <p>
+            Monitor campaigns, track performance,
+            manage clients and grow your business.
+        </p>
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h3>156</h3>
+            <p>Total Clients</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>48</h3>
+            <p>Active Projects</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>₹1.2L</h3>
+            <p>Monthly Revenue</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>92%</h3>
+            <p>Success Rate</p>
+        </div>
+
+    </div>
+
+    <div class="dashboard-row">
+
+        <div class="dashboard-card">
+
+            <h2>Recent Activity</h2>
+
+            <ul class="activity-list">
+                <li>✅ New client registered</li>
+                <li>📈 SEO campaign increased traffic by 28%</li>
+                <li>💰 Payment received from ABC Company</li>
+                <li>🎯 Facebook Ads campaign launched</li>
+            </ul>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h2>Upcoming Tasks</h2>
+
+            <ul class="activity-list">
+                <li>📅 Client Meeting - 10:00 AM</li>
+                <li>📝 Submit Monthly Report</li>
+                <li>🚀 Launch Google Ads Campaign</li>
+                <li>📊 Review Analytics</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- Users -->
+<!-- USERS PAGE -->
+<div class="page-section" id="users">
+
+    <div class="section-header">
+        <h1>Users Management</h1>
+        <p>Manage all registered users from one place.</p>
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h3>2,548</h3>
+            <p>Total Users</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>1,832</h3>
+            <p>Active Users</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>126</h3>
+            <p>New This Month</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>97%</h3>
+            <p>User Satisfaction</p>
+        </div>
+
+    </div>
+
+    <div class="orders-table">
+
+        <div class="order-row header">
+            <div>ID</div>
+            <div>Name</div>
+            <div>Email</div>
+            <div>Role</div>
+            <div>Status</div>
+            <div>Action</div>
+        </div>
+
+        <div class="order-row">
+            <div>#U001</div>
+            <div>John Smith</div>
+            <div>john@gmail.com</div>
+            <div>User</div>
+            <div><span class="status completed">Active</span></div>
+            <div><button class="view-btn">View</button></div>
+        </div>
+
+        <div class="order-row">
+            <div>#U002</div>
+            <div>Sarah Wilson</div>
+            <div>sarah@gmail.com</div>
+            <div>User</div>
+            <div><span class="status completed">Active</span></div>
+            <div><button class="view-btn">View</button></div>
+        </div>
+
+        <div class="order-row">
+            <div>#U003</div>
+            <div>David Miller</div>
+            <div>david@gmail.com</div>
+            <div>Moderator</div>
+            <div><span class="status processing">Online</span></div>
+            <div><button class="view-btn">View</button></div>
+        </div>
+
+        <div class="order-row">
+            <div>#U004</div>
+            <div>Emma Johnson</div>
+            <div>emma@gmail.com</div>
+            <div>User</div>
+            <div><span class="status pending">Inactive</span></div>
+            <div><button class="view-btn">View</button></div>
+        </div>
+
+        <div class="order-row">
+            <div>#U005</div>
+            <div>Michael Brown</div>
+            <div>michael@gmail.com</div>
+            <div>Admin</div>
+            <div><span class="status completed">Active</span></div>
+            <div><button class="view-btn">View</button></div>
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- Orders -->
+<div class="page-section" id="orders">
+
+    <div class="section-header">
+        <h1>Orders Management</h1>
+        <p>Manage and track all customer orders.</p>
+    </div>
+
+    <div class="orders-table">
+
+        <div class="order-row header">
+            <span>Order ID</span>
+            <span>Client</span>
+            <span>Service</span>
+            <span>Amount</span>
+            <span>Status</span>
+            <span>Action</span>
+        </div>
+
+        <div class="order-row">
+            <span>#ORD001</span>
+            <span>ABC Company</span>
+            <span>SEO Package</span>
+            <span>₹15,000</span>
+            <span class="status completed">Completed</span>
+            <button class="view-btn">View</button>
+        </div>
+
+        <div class="order-row">
+            <span>#ORD002</span>
+            <span>XYZ Traders</span>
+            <span>Google Ads</span>
+            <span>₹22,000</span>
+            <span class="status processing">Processing</span>
+            <button class="view-btn">View</button>
+        </div>
+
+        <div class="order-row">
+            <span>#ORD003</span>
+            <span>Tech Solutions</span>
+            <span>Social Media</span>
+            <span>₹12,500</span>
+            <span class="status pending">Pending</span>
+            <button class="view-btn">View</button>
+        </div>
+
+        <div class="order-row">
+            <span>#ORD004</span>
+            <span>Growth Media</span>
+            <span>Website Design</span>
+            <span>₹35,000</span>
+            <span class="status completed">Completed</span>
+            <button class="view-btn">View</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- Analytics -->
+<div class="page-section" id="analytics">
+
+    <div class="section-header">
+        <h1>Analytics Overview</h1>
+        <p>Track your business performance and growth metrics.</p>
+    </div>
+
+    <div class="analytics-grid">
+
+        <div class="analytics-card">
+            <h4>Total Visitors</h4>
+            <h2>24,568</h2>
+            <span class="positive">+18.4%</span>
+        </div>
+
+        <div class="analytics-card">
+            <h4>Conversions</h4>
+            <h2>1,284</h2>
+            <span class="positive">+12.7%</span>
+        </div>
+
+        <div class="analytics-card">
+            <h4>Bounce Rate</h4>
+            <h2>23%</h2>
+            <span class="negative">-4.2%</span>
+        </div>
+
+        <div class="analytics-card">
+            <h4>Revenue</h4>
+            <h2>₹1.8L</h2>
+            <span class="positive">+31.5%</span>
+        </div>
+
+    </div>
+
+    <div class="analytics-row">
+
+        <div class="analytics-panel">
+            <h3>Traffic Sources</h3>
+
+            <div class="source-item">
+                <span>Organic Search</span>
+                <strong>45%</strong>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" style="width:45%"></div>
+            </div>
+
+            <div class="source-item">
+                <span>Social Media</span>
+                <strong>28%</strong>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" style="width:28%"></div>
+            </div>
+
+        </div>
+
+        <div class="analytics-panel">
+
+            <h3>Top Performing Campaigns</h3>
+
+            <ul class="campaign-list">
+
+                <li>
+                    <span>Google Ads</span>
+                    <strong>₹52,000</strong>
+                </li>
+
+                <li>
+                    <span>Facebook Ads</span>
+                    <strong>₹38,000</strong>
+                </li>
+
+                <li>
+                    <span>SEO Campaign</span>
+                    <strong>₹31,500</strong>
+                </li>
+
+                <li>
+                    <span>Email Marketing</span>
+                    <strong>₹24,800</strong>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Settings -->
+<div class="page-section" id="settings">
+        <div class="card">
+            <h2>Settings</h2>
+            <p>Customize your account settings.</p>
+        </div>
+
+<!-- main settings section -->
+<section class="settings-section">
+
+  <div class="settings-header">
+    <h1>Settings</h1>
+    <p>Manage your account & preferences</p>
+  </div>
+
+  <div class="settings-grid">
+
+    <!-- PROFILE -->
+    <div class="settings-card">
+      <h3>Profile</h3>
+
+      <div class="form-grid">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="text" placeholder="Username">
+        <input type="text" placeholder="Phone Number">
+      </div>
+
+      <button onclick="window.location.href='dashboardError.html'">Save Profile</button>
+    </div>
+
+    <!-- SECURITY -->
+    <div class="settings-card">
+      <h3>Security</h3>
+
+      <div class="form-grid">
+        <input type="password" placeholder="Current Password">
+        <input type="password" placeholder="New Password">
+        <input type="password" placeholder="Confirm Password">
+      </div>
+
+      <button onclick="window.location.href='dashboardError.html'">Update Password</button>
+    </div>
+
+    <!-- NOTIFICATIONS -->
+    <div class="settings-card">
+      <h3>Notifications</h3>
+
+      <label><input type="checkbox"> Email Notifications</label>
+      <label><input type="checkbox"> SMS Alerts</label>
+      <label><input type="checkbox"> Push Notifications</label>
+
+    </div>
+
+    <!-- APPEARANCE -->
+    <div class="settings-card">
+      <h3>Appearance</h3>
+
+      <div class="toggle-row">
+        <span>Dark Mode</span>
+        <input type="checkbox">
+      </div>
+
+      <div class="toggle-row">
+        <span>Compact Mode</span>
+        <input type="checkbox">
+      </div>
+    </div>
+
+    <!-- API -->
+    <div class="settings-card">
+      <h3>API Settings</h3>
+
+      <input type="text" placeholder="Your API Key">
+
+      <button onclick="window.location.href='dashboardError.html'">Regenerate Key</button>
+    </div>
+
+    <!-- DANGER -->
+    <div class="settings-card danger">
+      <h3>Danger Zone</h3>
+      <p>Deleting your account is permanent.</p>
+
+      <button class="delete-btn" onclick="window.location.href='dashboardError.html'">Delete Account</button>
+    </div>
+
+  </div>
+
+</section>
+
+
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+
+<script src="/js/admin-dashboard.js"></script>
 </body>
 </html>

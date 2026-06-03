@@ -1102,3 +1102,326 @@ header{
         display:block;
     }
 }
+
+/* ========================================================= RESET =========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0b1220;
+    color: #fff;
+    overflow-x: hidden; /* IMPORTANT FIX */
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+/* ================= NAVBAR ================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(11,18,32,.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+}
+
+/* LOGO */
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* NAV LINKS (DESKTOP) */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #60a5fa;
+}
+
+/* DROPDOWN */
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+
+    min-width: 220px;
+    background: #111827;
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 15px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .3s;
+    overflow: hidden;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 14px 18px;
+}
+
+.dropdown-menu a:hover {
+    background: #1e293b;
+}
+
+/* ACTION BUTTONS */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.login-btn {
+    padding: 11px 24px;
+    background: linear-gradient(135deg,#2563eb,#7c3aed);
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37,99,235,.35);
+}
+
+/* MOBILE MENU BUTTON */
+.menu-btn {
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ================= SERVICES ================= */
+
+.srv-section {
+    padding: 120px 8%;
+    background: #0b1220;
+}
+
+.srv-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.srv-header span {
+    color: #4f9cff;
+    letter-spacing: 2px;
+}
+
+.srv-header h2 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.srv-header p {
+    color: #cbd5e1;
+}
+
+.srv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 25px;
+}
+
+.srv-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 20px;
+    transition: .4s;
+}
+
+.srv-card:hover {
+    transform: translateY(-10px);
+    border-color: #4f9cff;
+    box-shadow: 0 0 30px rgba(37,99,235,0.3);
+}
+
+/* ================= SOCIAL MEDIA SECTION ================= */
+
+.smm-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 120px 8%;
+}
+
+.smm-left-image img {
+    width: 100%;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+.smm-left-image:hover img {
+    transform: scale(1.05);
+}
+
+.smm-right {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.smm-title {
+    font-size: 44px;
+    line-height: 1.2;
+}
+
+/* ================= BRAND SECTION ================= */
+
+.brand-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 120px 8%;
+}
+
+/* ================= PPC SECTION ================= */
+
+.ppc-section {
+    padding: 120px 8%;
+    background: #070b18;
+    position: relative;
+}
+
+/* ================= FOOTER ================= */
+
+.dm-footer {
+    background: #0b1220;
+    padding: 80px 8% 30px;
+}
+
+.dm-footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 40px;
+}
+
+/* ================= MOBILE FIX (IMPORTANT) ================= */
+
+@media (max-width: 991px) {
+
+    body {
+        overflow-x: hidden; /* DOUBLE SAFE */
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .login-btn {
+        display: none;
+    }
+
+    /* NAV FIX */
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 280px;
+        height: calc(100vh - 80px); /* IMPORTANT FIX */
+        background: #111827;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 20px;
+        gap: 10px;
+
+        transition: .4s;
+        overflow-y: auto; /* FIX overflow issue */
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* dropdown fix */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        background: transparent;
+        border: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    /* SECTIONS */
+    .smm-container,
+    .brand-container {
+        grid-template-columns: 1fr;
+    }
+
+    .smm-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .smm-title {
+        font-size: 28px;
+    }
+}

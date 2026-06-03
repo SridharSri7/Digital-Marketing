@@ -183,10 +183,13 @@ function logoutUser(){
 
 // ========================= PASSWORD VALIDATION =========================
 
-function isStrongPassword(password){
+function isStrongPassword(password) {
 
-    const regex =
-    /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!password) return false;
+
+    password = password.trim(); // removes hidden spaces
+
+    const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
 
     return regex.test(password);
 }

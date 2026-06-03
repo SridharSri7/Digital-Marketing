@@ -558,3 +558,156 @@ header{
         display:block;
     }
 }
+
+/* ===================== FOOTER ==================== */
+
+.dm-footer{
+    background:#0b1220;
+    color:#fff;
+    padding:80px 8% 30px;
+}
+
+/* container */
+
+.dm-footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+}
+
+/* logo */
+
+.dm-logo{
+    font-size:28px;
+    color:#4f9cff;
+    margin-bottom:15px;
+}
+
+.ftr-logo{
+    margin-bottom:20px;
+}
+
+.ftr-logo img{
+    width:180px;
+    height:auto;
+    display:block;
+}
+
+.ftr-logo img{
+    width:180px;
+    height:auto;
+    display:block;
+    transition:0.4s ease;
+}
+
+.ftr-logo img:hover{
+    transform:scale(1.05);
+}
+
+/* text */
+
+.dm-footer-col p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+/* headings */
+
+.dm-footer-col h3{
+    margin-bottom:15px;
+    font-size:18px;
+    color:#fff;
+}
+
+/* links */
+
+.dm-footer-col ul{
+    list-style:none;
+}
+
+.dm-footer-col ul li{
+    margin-bottom:10px;
+    color:#cbd5e1;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.dm-footer-col a{
+    color:#cbd5e1;
+    transition:0.3s;
+}
+
+.dm-footer-col ul li:hover,a:hover{
+    color:#4f9cff;
+    transform:translateX(5px);
+}
+
+/* social icons */
+
+.dm-socials{
+    margin-top:15px;
+    display:flex;
+    gap:10px;
+}
+
+.dm-socials a{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,0.08);
+    border-radius:50%;
+    transition:0.3s;
+}
+
+.dm-socials a:hover{
+    background:#2563eb;
+    transform:translateY(-5px);
+}
+
+/* newsletter */
+
+.dm-newsletter{
+    margin-top:15px;
+    display:flex;
+    gap:10px;
+}
+
+.dm-newsletter input{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    outline:none;
+}
+
+.dm-newsletter button{
+    padding:10px 15px;
+    border:none;
+    background:#2563eb;
+    color:#fff;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.dm-newsletter button:hover{
+    background:#1d4ed8;
+}
+
+/* bottom */
+
+.dm-footer-bottom{
+    margin-top:50px;
+    text-align:center;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,0.1);
+    color:#94a3b8;
+}
+
+/* hover glow effect */
+
+.dm-footer-col:hover h3{
+    color:#4f9cff;
+}

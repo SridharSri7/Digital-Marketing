@@ -496,7 +496,7 @@ header{
     width:90px;
     height:60px;
     object-fit:contain;
-    filter:grayscale(1);
+    /* filter:grayscale(1); */
     opacity:.7;
     transition:.3s;
 }
