@@ -227,6 +227,8 @@ body{
 
     border-radius:20px;
 
+    margin-top: 20px;
+
     margin-bottom:30px;
 
     border:1px solid #1f2937;
@@ -1030,4 +1032,65 @@ button:hover{
         display:block;
     }
 
+}
+/* MOBILE SIDEBAR */
+@media(max-width:991px){
+
+    .sidebar{
+        position:fixed;
+        top:0;
+        left:-280px;
+
+        width:260px;
+        height:100vh;
+
+        background:#0f172a;
+
+        z-index:1001;
+
+        transition:.35s ease;
+    }
+
+    .sidebar.active{
+        left:0;
+    }
+
+    .main{
+        width:100%;
+    }
+
+    .toggle-btn{
+        display:block;
+        font-size:22px;
+        background:none;
+        border:none;
+        color:#fff;
+        cursor:pointer;
+        margin-top:0;
+    }
+}
+
+/* Overlay */
+.sidebar-overlay{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.6);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:1000;
+}
+
+.sidebar-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* Lock Body Scroll */
+body.no-scroll{
+    overflow:hidden;
 }
