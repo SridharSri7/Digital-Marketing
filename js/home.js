@@ -223,3 +223,5 @@ const hwkObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 hwkElements.forEach(el => hwkObserver.observe(el));
+
+// ======================= OUR WORK =======================
