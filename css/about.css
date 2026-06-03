@@ -1423,3 +1423,205 @@ header{
 }
 
 /* ========================================================================================================== */
+
+/* =========================
+   GLOBAL RESPONSIVE FIX
+========================= */
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* =========================
+   TABLET (<= 991px)
+========================= */
+
+@media (max-width:991px){
+
+    /* NAVBAR */
+    .navbar{
+        height:70px;
+    }
+
+    .logo img{
+        height:40px;
+    }
+
+    /* MENU */
+    .nav-links{
+        position:fixed;
+        top:70px;
+        right:-100%;
+        width:300px;
+        height:calc(100vh - 70px);
+
+        background:#0b1220;
+        flex-direction:column;
+        align-items:flex-start;
+
+        padding:20px;
+        gap:12px;
+
+        transition:.4s ease;
+        z-index:9999;
+
+        border-left:1px solid rgba(255,255,255,.08);
+        overflow-y:auto;
+    }
+
+    .nav-links.active{
+        right:0;
+    }
+
+    .nav-links a{
+        width:100%;
+        padding:12px;
+        border-radius:10px;
+    }
+
+    /* DROPDOWN */
+    .dropdown-menu{
+        position:relative;
+        top:0;
+        width:100%;
+        display:none;
+        opacity:1;
+        visibility:visible;
+        background:#111827;
+    }
+
+    .dropdown.active .dropdown-menu{
+        display:block;
+    }
+
+    /* BUTTONS */
+    .login-btn,
+    .signup-btn{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+        font-size:28px;
+        cursor:pointer;
+        color:#fff;
+    }
+
+    /* HERO */
+    .abt-hero h1{
+        font-size:38px;
+        padding:0 15px;
+    }
+
+    /* WHO WE ARE */
+    .wwa-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .wwa-left h2{
+        font-size:32px;
+    }
+
+    .wwa-stats{
+        flex-direction:column;
+    }
+
+    .wwa-right{
+        height:auto;
+    }
+
+    .wwa-img{
+        position:relative !important;
+        width:100% !important;
+        height:250px !important;
+        transform:none !important;
+        margin-bottom:15px;
+    }
+
+    /* TRUSTED PARTNERS */
+    .tp-header h2{
+        font-size:30px;
+    }
+
+    /* FAQ */
+    .faqx-container{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .faqx-title{
+        font-size:28px;
+    }
+
+    /* INSIGHTS */
+    .ins-grid{
+        grid-template-columns:1fr;
+    }
+
+    /* CTA */
+    .cta-container{
+        padding:35px 20px;
+    }
+
+    .cta-container h2{
+        font-size:30px;
+        line-height:1.3;
+    }
+
+    .cta-buttons{
+        flex-direction:column;
+    }
+
+    .cta-btn{
+        width:100%;
+    }
+
+    /* FOOTER */
+    .ftr-container{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .ftr-socials{
+        justify-content:center;
+    }
+
+    .ftr-newsletter{
+        flex-direction:column;
+    }
+}
+
+/* =========================
+   MOBILE (<= 576px)
+========================= */
+
+@media (max-width:576px){
+
+    .logo{
+        font-size:22px;
+    }
+
+    .abt-hero h1{
+        font-size:28px;
+    }
+
+    .wwa-left h2,
+    .tp-header h2,
+    .ins-header h2{
+        font-size:24px;
+    }
+
+    .cta-container h2{
+        font-size:24px;
+    }
+
+    .cta-container p{
+        font-size:15px;
+    }
+
+    .nav-links{
+        width:260px;
+    }
+}

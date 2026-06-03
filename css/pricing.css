@@ -711,3 +711,76 @@ header{
 .dm-footer-col:hover h3{
     color:#4f9cff;
 }
+
+
+@media (max-width: 768px) {
+    /* REMOVE FLOATING HERO ELEMENTS */
+    .cs-img,
+    .cs-kpi,
+    .cs-bg-glow {
+        display: none !important;
+    }
+
+    /* OPTIONAL: improve text readability */
+    .cs-title {
+        font-size: 2.8rem;
+        text-align: center;
+    }
+
+    .cs-desc {
+        font-size: 14px;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .cs-content {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* GRID FIX */
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* CARD HEIGHT FIX (important) */
+    .price-card {
+        height: auto;
+        perspective: none; /* disables weird 3D collapse */
+    }
+
+    /* REMOVE 3D FLIP ON MOBILE (VERY IMPORTANT) */
+    .card-inner {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .price-card.flipped .card-inner {
+        transform: none !important;
+    }
+
+    /* FRONT/BACK STACK INSTEAD OF FLIP */
+    .card-front,
+    .card-back {
+        position: relative;
+        transform: none;
+        backface-visibility: visible;
+        height: auto;
+    }
+
+    .card-back {
+        margin-top: 15px;
+    }
+
+    /* TEXT FIX */
+    .card-front h1 {
+        font-size: 36px;
+    }
+
+    .p-title {
+        font-size: 2rem;
+    }
+}
