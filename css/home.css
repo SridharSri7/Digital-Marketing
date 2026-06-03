@@ -172,10 +172,7 @@ header{
 
 @media(max-width:991px){
 
-    .login-btn,
-    .signup-btn{
-        display:none;
-    }
+    
 
     .menu-btn{
         display:block;
@@ -1608,9 +1605,9 @@ header{
         display:block;
     }
 
-    .login-btn{
+    /* .login-btn{
         display:none;
-    }
+    } */
 
     .nav-links{
         position:fixed;
