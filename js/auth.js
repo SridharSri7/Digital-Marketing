@@ -210,3 +210,15 @@ function isStrongPassword(password) {
 }
 
 // =========================================
+function togglePassword(inputId, icon){
+
+    const input = document.getElementById(inputId);
+
+    if(input.type === "password"){
+        input.type = "text";
+        icon.innerHTML = "🙈";
+    }else{
+        input.type = "password";
+        icon.innerHTML = "👁";
+    }
+}

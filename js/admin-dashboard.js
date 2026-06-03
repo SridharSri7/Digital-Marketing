@@ -21,9 +21,7 @@ function logout() {
 }
 
 // sidebar toggle
-function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle("active");
-}
+
 
 // sidebar links
 // sidebar links + page switching
