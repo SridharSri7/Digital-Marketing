@@ -1,11 +1,4 @@
-const menuBtn = document.querySelector(".menu-btn");
-const navLinks = document.querySelector(".nav-links");
 
-if(menuBtn){
-    menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
-}
 
 // ======= NAVBAR
 document.querySelectorAll(".dropdown > a").forEach(item => {
@@ -17,7 +10,16 @@ document.querySelectorAll(".dropdown > a").forEach(item => {
     });
 });
 
+// ===lock scroll===
+const menuBtn = document.querySelector(".menu-btn");
+const navLinks = document.querySelector(".nav-links");
 
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+
+  // LOCK / UNLOCK SCROLL
+  document.body.classList.toggle("no-scroll");
+});
 
 
 

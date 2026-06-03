@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/auth.css">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/auth.css">
+<title>Auth UI</title>
 </head>
 <body>
-    
-    
-<!-- AUTH MODAL -->
 
 <div class="auth-modal" id="authModal">
 
@@ -18,66 +15,58 @@
         <span class="close-btn" onclick="closeModal()">&times;</span>
 
         <!-- LOGIN -->
-
         <div id="loginForm">
 
-            <h2>Login</h2>
+            <h2>Welcome Back</h2>
 
             <input type="email" id="loginEmail" placeholder="Email">
-
             <input type="password" id="loginPassword" placeholder="Password">
-            <small>
-               Password must be 8+ chars with letters, numbers & symbols
-            </small>
 
             <select id="loginRole">
                 <option value="user">User</option>
                 <option value="admin">Admin</option>
             </select>
 
-            <button onclick="loginUser()">
-                Login
-            </button>
+            <button onclick="loginUser()">Login</button>
 
-            <p>
-                No account?
-                <span onclick="showSignup()">
-                    Sign Up
-                </span>
-            </p>
+            <div class="auth-links">
+                <p>
+                    No account?
+                    <span onclick="showSignup()">Sign Up</span>
+                </p>
+
+                <p class="forgot" onclick="forgotPassword()">
+                    Forgot Password?
+                </p>
+            </div>
 
         </div>
 
         <!-- SIGNUP -->
-
         <div id="signupForm" style="display:none;">
 
             <h2>Create Account</h2>
 
-            <input type="text" id="signupName" placeholder="Name">
-
+            <input type="text" id="signupName" placeholder="Full Name">
             <input type="email" id="signupEmail" placeholder="Email">
-
             <input type="password" id="signupPassword" placeholder="Password">
-            <small>
-               Password must be 8+ chars with letters, numbers & symbols
-            </small>
+            <input type="password" id="signupConfirmPassword" placeholder="Confirm Password">
+            <small id="passwordMatchMsg"></small>
 
             <select id="signupRole">
                 <option value="user">User</option>
                 <option value="admin">Admin</option>
             </select>
 
-            <button onclick="signupUser()">
-                Create Account
-            </button>
+            <button onclick="signupUser()">Create Account</button>
 
-            <p>
-                Already have account?
-                <span onclick="showLogin()">
-                    Login
-                </span>
-            </p>
+            <div class="auth-links">
+                <p>
+                    Already have an account?
+                    <span onclick="showLogin()">Login</span>
+                </p>
+
+            </div>
 
         </div>
 
@@ -85,6 +74,53 @@
 
 </div>
 
+
+<script src="/js/auth.js"></script>
+<script>
+const password = document.getElementById("signupPassword");
+const confirmPassword = document.getElementById("signupConfirmPassword");
+const msg = document.getElementById("passwordMatchMsg");
+
+function checkPasswordMatch() {
+
+    const pass = password.value.trim();
+    const confirm = confirmPassword.value.trim();
+
+    if (confirm === "") {
+        msg.textContent = "";
+        password.classList.remove("input-error","input-success");
+        confirmPassword.classList.remove("input-error","input-success");
+        return true;
+    }
+
+    if (pass !== confirm) {
+        msg.textContent = "❌ Passwords do not match";
+        msg.style.color = "#ef4444";
+
+        password.classList.add("input-error");
+        confirmPassword.classList.add("input-error");
+
+        password.classList.remove("input-success");
+        confirmPassword.classList.remove("input-success");
+
+        return false;
+    }
+
+    msg.textContent = "✔ Passwords match";
+    msg.style.color = "#22c55e";
+
+    password.classList.add("input-success");
+    confirmPassword.classList.add("input-success");
+
+    password.classList.remove("input-error");
+    confirmPassword.classList.remove("input-error");
+
+    return true;
+}
+
+// live validation
+password.addEventListener("input", checkPasswordMatch);
+confirmPassword.addEventListener("input", checkPasswordMatch);
 
 </body>
 </html>

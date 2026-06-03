@@ -1,13 +1,14 @@
 // ==================== MOBILE MENU TOGGLE ====================
+// ===lock scroll===
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
-if(menuBtn){
-    menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
-}
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
 
+  // LOCK / UNLOCK SCROLL
+  document.body.classList.toggle("no-scroll");
+});
 // ======= NAVBAR
 document.querySelectorAll(".dropdown > a").forEach(item => {
     item.addEventListener("click", function(e){

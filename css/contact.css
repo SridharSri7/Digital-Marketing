@@ -881,3 +881,10 @@ header{
     font-size:32px;
   }
 }
+
+/* ======= LOCK-SCROLL ======== */
+/* =========== */
+body.no-scroll{
+  overflow: hidden;
+  height: 100vh;
+}

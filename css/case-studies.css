@@ -948,3 +948,10 @@ header{
     animation: none !important;
     transform: none !important;
 }
+
+/* ======= LOCK-SCROLL ======== */
+/* =========== */
+body.no-scroll{
+  overflow: hidden;
+  height: 100vh;
+}

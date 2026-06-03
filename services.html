@@ -10,58 +10,49 @@
 <body>
 
 <header>
+  <nav class="navbar">
 
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo-stackly (1).webp" alt="Logo">
+      </a>
+    </div>
 
- <nav class="navbar">
+    <ul class="nav-links" id="navLinks">
 
-        <div class="logo">
-            <a href="index.html">
-               <img src="images/logo-stackly (1).webp" alt="Logo">
-            </a>
-        </div>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
 
-        <ul class="nav-links">
-
-            <li><a href="index.html">Home</a></li>
-
-            <li><a href="about.html">About</a></li>
-
-            <li class="dropdown">
-                <a href="#">Services ▾</a>
-
-                <ul class="dropdown-menu">
-                    <li><a href="services.html">Our Services</a></li>
-                    <li><a href="service-details.html">Service Details</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="#">Pages ▾</a>
-
-                <ul class="dropdown-menu">
-                    <li><a href="team.html">Our Team</a></li>
-                    <li><a href="case-studies.html">Case Studies</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                </ul>
-            </li>
-
-            <li><a href="contact.html">Contact</a></li>
-
+      <li class="dropdown">
+        <a href="#" class="drop-toggle">Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="service-details.html">Service Details</a></li>
         </ul>
+      </li>
 
-        <div class="nav-actions">
+      <li class="dropdown">
+        <a href="#" class="drop-toggle">Pages ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="team.html">Team</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </li>
 
-            <a class="login-btn" id="authBtn">
-                Login
-            </a>
+      <li><a href="contact.html">Contact</a></li>
 
-            <div class="menu-btn">
-                ☰
-            </div>
+    </ul>
 
-        </div>
+    <div class="nav-actions">
 
-    </nav>
+      <a class="login-btn" id="authBtn">Login</a>
+
+      <div class="menu-btn" id="menuBtn">☰</div>
+
+    </div>
+
+  </nav>
 </header>
 
 <!-- SERVICES -->

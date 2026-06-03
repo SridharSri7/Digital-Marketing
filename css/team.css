@@ -1510,3 +1510,80 @@ header{
     }
 
 }
+
+@media (max-width: 991px) {
+
+    .menu-btn {
+        display: block;
+        z-index: 1001;
+    }
+
+    .login-btn {
+        display: none;
+    }
+
+    /* SMALL SIDE DRAWER */
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        right: -260px;   /* hidden */
+        width: 240px;    /* SMALL PANEL */
+        height: auto;    /* NOT FULL SCREEN */
+        max-height: 70vh; /* important */
+        overflow-y: auto;
+
+        background: #111827;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 15px;
+        gap: 8px;
+
+        border-radius: 14px 0 0 14px;
+
+        box-shadow: -10px 20px 40px rgba(0,0,0,0.4);
+
+        transition: 0.35s ease;
+        z-index: 999;
+    }
+
+    /* OPEN STATE */
+    .nav-links.active {
+        right: 10px;   /* small floating drawer */
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .nav-links a:hover {
+        background: rgba(255,255,255,0.06);
+    }
+
+    /* DROPDOWN FIX */
+    .dropdown-menu {
+        position: static;
+        display: none;
+        background: transparent;
+        border: none;
+        padding-left: 10px;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
+/* ======= LOCK-SCROLL ======== */
+/* =========== */
+body.no-scroll{
+  overflow: hidden;
+  height: 100vh;
+}

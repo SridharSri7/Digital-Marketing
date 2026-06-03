@@ -84,6 +84,21 @@ function showLogin(){
 
 function signupUser(){
 
+    const pass = document.getElementById("signupPassword").value;
+    const confirm = document.getElementById("signupConfirmPassword").value;
+    const msg = document.getElementById("passwordMatchMsg");
+
+    if(pass !== confirm){
+        msg.textContent = "❌ Passwords do not match";
+        msg.style.color = "#ef4444";
+
+        return; // STOP SIGNUP
+    }
+
+    // continue signup logic
+    console.log("Signup success");
+
+
     const password =
     document.getElementById("signupPassword").value;
 
@@ -193,3 +208,5 @@ function isStrongPassword(password) {
 
     return regex.test(password);
 }
+
+// =========================================
