@@ -20,7 +20,7 @@ body{
 /* SIDEBAR */
 .sidebar{
     width:260px;
-    background:#0f172a;
+    background:#223154;
     padding:20px;
     display:flex;
     flex-direction:column;

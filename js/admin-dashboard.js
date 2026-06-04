@@ -21,52 +21,16 @@ function logout() {
 }
 
 // sidebar toggle
-
-
-// sidebar links
-// sidebar links + page switching
-const menuLinks = document.querySelectorAll('.menu a');
-const sections = document.querySelectorAll('.page-section');
-
-menuLinks.forEach(link => {
-
-    link.addEventListener('click', (e) => {
-
-        e.preventDefault();
-
-        // Remove active link
-        menuLinks.forEach(item =>
-            item.classList.remove('active')
-        );
-
-        // Hide all sections
-        sections.forEach(section =>
-            section.classList.remove('active-section')
-        );
-
-        // Active menu
-        link.classList.add('active');
-
-        // Show target section
-        const target = link.dataset.page;
-
-        document
-            .getElementById(target)
-            .classList.add('active-section');
-
-    });
-
-});
-
-// -------------------
+// Sidebar Toggle
 const sidebar = document.getElementById("sidebar");
 const overlay = document.getElementById("sidebarOverlay");
 
-function toggleSidebar() {
+function toggleSidebar(){
 
     sidebar.classList.toggle("active");
     overlay.classList.toggle("active");
     document.body.classList.toggle("no-scroll");
+
 }
 
 overlay.addEventListener("click", () => {
@@ -74,4 +38,46 @@ overlay.addEventListener("click", () => {
     sidebar.classList.remove("active");
     overlay.classList.remove("active");
     document.body.classList.remove("no-scroll");
+
+});
+
+// Menu Links
+const menuLinks = document.querySelectorAll(".menu a");
+const sections = document.querySelectorAll(".page-section");
+
+menuLinks.forEach(link => {
+
+    link.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        // Active Menu
+        menuLinks.forEach(item =>
+            item.classList.remove("active")
+        );
+
+        link.classList.add("active");
+
+        // Show Section
+        sections.forEach(section =>
+            section.classList.remove("active-section")
+        );
+
+        const target = link.dataset.page;
+
+        document
+            .getElementById(target)
+            .classList.add("active-section");
+
+        // Auto Close Sidebar On Mobile
+        if(window.innerWidth <= 991){
+
+            sidebar.classList.remove("active");
+            overlay.classList.remove("active");
+            document.body.classList.remove("no-scroll");
+
+        }
+
+    });
+
 });

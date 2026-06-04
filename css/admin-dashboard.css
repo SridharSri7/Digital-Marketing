@@ -20,7 +20,7 @@ body{
 /* SIDEBAR */
 .sidebar{
     width:260px;
-    background:#0f172a;
+    background:#223154;
     padding:20px;
     display:flex;
     flex-direction:column;
@@ -1044,7 +1044,7 @@ button:hover{
         width:260px;
         height:100vh;
 
-        background:#0f172a;
+        background:#223154;
 
         z-index:1001;
 

@@ -26,11 +26,9 @@ function toggleSidebar() {
 }
 
 // ===============================
-const menuLinks =
-document.querySelectorAll(".menu a");
-
-const sections =
-document.querySelectorAll(".page-section");
+const menuLinks = document.querySelectorAll(".menu a");
+const sections = document.querySelectorAll(".page-section");
+const sidebar = document.getElementById("sidebar");
 
 menuLinks.forEach(link => {
 
@@ -38,27 +36,42 @@ menuLinks.forEach(link => {
 
         e.preventDefault();
 
+        // Active Menu
         menuLinks.forEach(item =>
             item.classList.remove("active")
         );
 
         link.classList.add("active");
 
+        // Show Section
         sections.forEach(section =>
             section.classList.remove("active-section")
         );
 
-        const target =
-        link.dataset.target;
-
         document
-        .getElementById(target)
-        .classList.add("active-section");
+            .getElementById(link.dataset.target)
+            .classList.add("active-section");
+
+        // Close Sidebar on Mobile
+        if(window.innerWidth <= 991){
+            sidebar.classList.remove("active");
+        }
 
     });
 
 });
 
+document.addEventListener("click", function(e){
+
+    if(
+        window.innerWidth <= 991 &&
+        !sidebar.contains(e.target) &&
+        !e.target.classList.contains("toggle-btn")
+    ){
+        sidebar.classList.remove("active");
+    }
+
+});
 
 // ============================ profile edit form ===========================
 const loggedUser =
