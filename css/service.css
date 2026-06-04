@@ -1546,3 +1546,135 @@ body.no-scroll {
     overflow: hidden;
 }
 }
+
+/* ================================================ */
+/* =====================================
+   MOBILE RESPONSIVE (991px and below)
+===================================== */
+
+@media (max-width: 991px){
+
+    /* SMM SECTION */
+
+    .smm-section{
+        padding:80px 20px;
+    }
+
+    .smm-container{
+        display:flex;
+        flex-direction:column;
+        gap:35px;
+        text-align:center;
+    }
+
+    .smm-left-image img{
+        width:100%;
+        max-width:500px;
+        margin:auto;
+        display:block;
+        border-radius:16px;
+    }
+
+    .smm-right{
+        padding:0;
+        align-items:center;
+    }
+
+    .smm-title{
+        font-size:32px;
+        line-height:1.3;
+    }
+
+    .smm-desc{
+        max-width:100%;
+        font-size:15px;
+        line-height:1.8;
+    }
+
+    .smm-stats{
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
+        width:100%;
+    }
+
+    .smm-stat{
+        padding:14px 10px;
+    }
+
+    .smm-stat h3{
+        font-size:18px;
+    }
+
+    .smm-stat p{
+        font-size:11px;
+    }
+
+    /* BRAND SECTION */
+
+    .brand-section{
+        padding:80px 20px;
+    }
+
+    .brand-container{
+        display:flex;
+        flex-direction:column-reverse;
+        gap:35px;
+        text-align:center;
+    }
+
+    .brand-right-image img{
+        width:100%;
+        max-width:500px;
+        margin:auto;
+        display:block;
+        border-radius:16px;
+    }
+
+    .brand-left-content{
+        align-items:center;
+    }
+
+    .brand-left-content h2{
+        font-size:32px;
+        line-height:1.3;
+    }
+
+    .brand-left-content p{
+        font-size:15px;
+        line-height:1.8;
+    }
+
+    .brand-chips{
+        justify-content:center;
+    }
+
+    .brand-list{
+        padding-left:0;
+        text-align:left;
+        width:100%;
+        max-width:350px;
+    }
+}
+
+/* EXTRA SMALL MOBILE */
+
+@media (max-width: 576px){
+
+    .smm-title,
+    .brand-left-content h2{
+        font-size:26px;
+    }
+
+    .smm-stats{
+        grid-template-columns:1fr;
+    }
+
+    .smm-stat{
+        width:100%;
+    }
+
+    .chip{
+        font-size:12px;
+        padding:7px 12px;
+    }
+}

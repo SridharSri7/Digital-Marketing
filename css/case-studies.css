@@ -955,3 +955,139 @@ body.no-scroll{
   overflow: hidden;
   height: 100vh;
 }
+
+/* ========== New Section ============ */
+.case-highlight{
+    min-height:100vh;
+    background:linear-gradient(135deg,#050816,#0b1225);
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.center-content{
+    max-width:900px;
+    z-index:10;
+}
+
+.main-title{
+    font-size:4rem;
+    font-weight:800;
+    color:#fff;
+    opacity:0;
+    transform:scale(.5);
+    transition:1.2s;
+}
+
+.main-desc{
+    color:#b8c2d9;
+    font-size:1.1rem;
+    margin:25px 0;
+    opacity:0;
+    transform:translateY(100px);
+    transition:1.2s;
+}
+
+.stats{
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.stat{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(15px);
+    padding:25px;
+    border-radius:20px;
+    min-width:180px;
+    opacity:0;
+    transform:translateY(80px);
+    transition:1s;
+}
+
+.stat h3{
+    color:#00e5ff;
+    font-size:2rem;
+}
+
+.floating-text{
+    position:absolute;
+    color:#00e5ff;
+    font-size:2rem;
+    font-weight:700;
+    opacity:0;
+    transition:1.5s;
+}
+
+.left{
+    left:-300px;
+    top:30%;
+}
+
+.right{
+    right:-300px;
+    top:40%;
+}
+
+.top{
+    top:-150px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.bottom{
+    bottom:-150px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* Active Animation */
+
+.case-highlight.show .left{
+    left:5%;
+    opacity:.3;
+}
+
+.case-highlight.show .right{
+    right:5%;
+    opacity:.3;
+}
+
+.case-highlight.show .top{
+    top:15%;
+    opacity:.3;
+}
+
+.case-highlight.show .bottom{
+    bottom:15%;
+    opacity:.3;
+}
+
+.case-highlight.show .main-title{
+    opacity:1;
+    transform:scale(1);
+}
+
+.case-highlight.show .main-desc{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.case-highlight.show .stat{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.case-highlight.show .stat:nth-child(2){
+    transition-delay:.2s;
+}
+
+.case-highlight.show .stat:nth-child(3){
+    transition-delay:.4s;
+}

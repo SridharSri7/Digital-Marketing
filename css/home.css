@@ -405,7 +405,7 @@ header{
 .trusted-section{
     padding:120px 8%;
     background:#081120;
-    background-image: url(/images/StarsBG.webp);
+    background-image: url(/images/StarBgimg.webp);
     position:relative;
     overflow:hidden;
 }
@@ -849,6 +849,7 @@ header{
     transform:translateY(40px);
     opacity:0;
     animation:fadeUp 1s forwards;
+    cursor: pointer;
 }
 
 /* hidden state */
@@ -1027,6 +1028,7 @@ header{
     align-items:center;
     justify-content:center;
     font-weight:bold;
+    cursor: pointer;
 }
 
 /* scroll reveal */

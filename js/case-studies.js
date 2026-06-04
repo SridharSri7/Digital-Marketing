@@ -150,4 +150,15 @@ document.querySelectorAll(".dropdown > a").forEach(item => {
 
 })();
 
+// ====================== New Section =========================
+const caseSection = document.querySelector(".case-highlight");
 
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            caseSection.classList.add("show");
+        }
+    });
+},{threshold:0.3});
+
+observer.observe(caseSection);
